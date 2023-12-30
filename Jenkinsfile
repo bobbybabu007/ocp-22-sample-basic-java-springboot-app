@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        label "java17"
+        label "java11"
     }
     stages {
         stage('SCM') {
