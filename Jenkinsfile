@@ -15,18 +15,24 @@ pipeline {
                 sh 'mvn clean compile'
             }
         }
-        stage('Test') {
+        stage('Test-1') {
             steps {
                 echo 'Testing..'
                 sh 'mvn test'
             }
         }
-        stage('Package') {
+        stage('Test-2') {
             steps {
-                echo 'Packaging....'
-                sh 'mvn package'
+                echo 'Testing..'
+                sh 'mvn test'
             }
         }
+        stage('Regression Tests') {
+            steps {
+                echo 'Testing..'
+                sh 'mvn test'
+            }
+        }        
                 stage('Archiving') {
             steps {
                 echo 'Archiving JAR File....'
